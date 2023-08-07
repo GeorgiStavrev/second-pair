@@ -5,7 +5,7 @@ from flask.views import MethodView
 
 from api.agents.schemas import AgentSchema, AgentQuerySchema, AgentQueryResponseSchema
 
-from services import storage
+from services import storage, agent_service
 
 blp = Blueprint(
     "agents",
@@ -44,8 +44,12 @@ class GetAgent(MethodView):
 class QueryAgent(MethodView):
     @blp.arguments(AgentQuerySchema, location="json")
     @blp.response(200, AgentQueryResponseSchema)
-    def post(self, *args: str, **kwargs: dict):
-        agent_response = "Empty"
+    def post(self, args: str, **kwargs: dict):
+        name = kwargs.get("name")
+        query = args.get("query")
+        agent = storage.read_agent(name)
+        agent_run = agent_service.Agent(agent)
+        agent_response = agent_run.query(query)
         response = {
             "response": agent_response
         }

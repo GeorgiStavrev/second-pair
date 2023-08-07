@@ -184,4 +184,5 @@ src/firebaseServiceAccountCredentials.json
 .vscode/*
 src/set_env.sh
 src/db/
+src/exec_env/
 iac/

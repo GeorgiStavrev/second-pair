@@ -52,6 +52,10 @@ def read_skills() -> List[str]:
     return read(SKILLS_TABLE)
 
 
+def read_skill(skill_name: str) -> List[str]:
+    return read_item(SKILLS_TABLE, skill_name)
+
+
 def write_skill(name: str, description: str, code: str):
     item = {
         "name": name,

@@ -1,9 +1,15 @@
-from marshmallow import Schema, fields as f
+from marshmallow import Schema, fields as f, validate
+
+
+class AgentSkillSchema(Schema):
+    name = f.String()
+    type = f.String(validate=validate.OneOf(["Python"]))
+    path = f.String()
 
 
 class AgentSchema(Schema):
     name = f.String()
-    skills = f.List(f.String)
+    skills = f.List(f.Nested(AgentSkillSchema))
 
 
 class AgentQuerySchema(Schema):
