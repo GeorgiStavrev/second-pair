@@ -14,10 +14,10 @@ from services import auth_service
 
 
 TABLE_NAME_MAPPING = {
-    "LOCAL": "test-second-pair-APIKeys",
-    "TEST": "test-second-pair-APIKeys",
-    "DEV": "test-second-pair-APIKeys",
-    "PROD": "second-pair-APIKeys",
+    "LOCAL": "test-squad-service-APIKeys",
+    "TEST": "test-squad-service-APIKeys",
+    "DEV": "test-squad-service-APIKeys",
+    "PROD": "squad-service-APIKeys",
 }
 
 logger = get_logger(__name__)

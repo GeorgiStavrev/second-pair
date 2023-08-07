@@ -14,7 +14,7 @@ env:
   TF_VAR_slack_webhook_alarms: ${{ secrets.SLACK_ALARMS_WEBHOOK_URL }}
 
   ECS_CLUSTER: shared-cluster
-  ECS_SERVICE: test-second-pair-test
+  ECS_SERVICE: test-squad-service-test
 jobs:
   terraform:
     name: Deploy to TEST
@@ -49,7 +49,7 @@ jobs:
 
       - name: Upload new image to ECR on TEST
         working-directory: ./src
-        run: REPO_NAME=test-second-pair make deploy-aws-test
+        run: REPO_NAME=test-squad-service make deploy-aws-test
 
       - name: Terraform Apply to TEST Environment
         working-directory: ./iac

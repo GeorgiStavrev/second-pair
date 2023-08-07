@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 ssm_client = boto3.client("ssm")
 
-PARAMETER_FORMAT = "/second-pair/{env}/{name}"
+PARAMETER_FORMAT = "/squad-service/{env}/{name}"
 
 
 def get_param(env: str, name: str, type: str = "string") -> str:

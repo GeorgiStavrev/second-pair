@@ -17,7 +17,7 @@ env:
   TF_VAR_slack_webhook_alarms: ${{ secrets.SLACK_ALARMS_WEBHOOK_URL }}
 
   ECS_CLUSTER: shared-cluster
-  ECS_SERVICE: second-pair-prod
+  ECS_SERVICE: squad-service-prod
 
 jobs:
   terraform:
@@ -70,7 +70,7 @@ jobs:
 
       - name: Upload new image to ECR on PRODUCTION
         working-directory: ./src
-        run: REPO_NAME=second-pair make deploy-aws-prod
+        run: REPO_NAME=squad-service make deploy-aws-prod
 
       - name: Terraform Apply to PROD Environment
         working-directory: ./iac

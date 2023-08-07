@@ -16,7 +16,7 @@ class Config:
     CORS_EXPOSE_HEADERS = [CUSTOM_AUTH_HEADER]
     CORS_ALLOW_HEADERS = "*"
     CORS_SUPPORTS_CREDENTIALS = True
-    API_TITLE = "second-pair Service API"
+    API_TITLE = "squad-service Service API"
     API_VERSION = "v1"
     OPENAPI_VERSION = "3.0.2"
     OPENAPI_JSON_PATH = "api-spec.json"

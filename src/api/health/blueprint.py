@@ -6,7 +6,7 @@ blp = Blueprint(
     "health",
     "health",
     url_prefix="/api/v1/health",
-    description="second-pair service health.",
+    description="squad-service service health.",
 )
 
 
@@ -15,5 +15,5 @@ class Health(MethodView):
     @blp.response(200)
     def get(self):
         return flask.Response(
-            status=200, response="Service second-pair is healthy!", mimetype="text/plain"
+            status=200, response="Service squad-service is healthy!", mimetype="text/plain"
         )
